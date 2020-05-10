@@ -1,0 +1,197 @@
+---
+title: "HBase基础与开发实践"
+layout: post
+date: 2016-08-10 14:58:00
+category: bigdata
+tags:
+ - Java
+ - Image
+ - HBase
+ - NoSQL
+
+share: true
+comments: true
+---
+
+# HBase
+
+## 最佳实践
+
+### 避免数据热点
+
+加盐的过程本质上是对原有的主键加上一个字节的前缀，
+如下面公式所示：
+new_row_key = (++index % BUCKETS_NUMBER) + original_key
+
+BUCKETS_NUMBER 为桶的个数。主键的分布决定了数据的分布，把主键
+打散也就意味着数据打散。具体使用时，一般建议桶的数目等于 RegionServer 的
+数目。
+
+### 多租户
+
+我们开发了 DHS 系统（Didi HBase Service）进行项目管理，并且在 HBase 上通过 Namespace、RS Group 等技术来分割用户的资源、数据和权限。通过计算开销并计费的方法来管控资源分配
+
+HBase 自带的 jxm 信息会汇总到 Region 和 RegionServer 级别的数据，管理员会经常用到，但是用户却很少关注这个级别。根据这种情况我们开发了 HBase 表级别的监控，并且会有权限控制，让业务 RD 只能看到和自己相关的表，清楚自己项目表的吞吐及存储占用情况
+
+RegionServer Group，实现细节可以参照 HBase HBASE-6721 这个 Patch。滴滴在这个基础上作了一些分配策略上的优化，以便适合滴滴业务场景的修改。RS Group简单概括是指通过分配一批指定的RegionServer列表，成为一个RS Group，每个 Group 可以按需挂载不同的表，并且当 Group 内的表发生异常后，Region不会迁移到其他的 Group。这样，每个 Group 就相当于一个逻辑上的子集群，通过这种方式达到资源隔离的效果，降低管理成本，不必为每个高 SLA 的业务线单独搭集群。
+
+
+
+
+
+## HDFS中文件的存储
+
+[Browsing HDFS for HBase Objects](https://hbase.apache.org/book.html#trouble.namenode.hbase.objects)
+
+```shell
+/hbase/data/default/<table_name>/ab0ba9f7e0d2898a0f61aa687d3d4886/<column_family>/<HFile_name>
+```
+
+如
+
+```shell
+/hbase/data/default/my_table/d177ff7276d2e46d69dc50f67f92643a/cf/
+```
+
+HFile每bulkload一次，新增加的HFile序列号增加1
+
+```shell
+ ./hadoop fs -ls /hbase/data/default/recommend_result/d177ff7276d2e46d69dc50f67f92643a/cf
+Found 2 items
+-rw-rw-rw-   3 tdw_hectorhe g_cdg_cft_data__cft 2791972087 2019-04-11 07:06 /hbase/data/default/recommend_result/d177ff7276d2e46d69dc50f67f92643a/cf/accd28866e6d40738849b4efb08ea154_SeqId_312_
+-rw-r--r--   3 hbaseadmin   users               2941438650 2019-04-11 04:07 /hbase/data/default/recommend_result/d177ff7276d2e46d69dc50f67f92643a/cf/ee29f8ad0fa14f508793108234242de4
+```
+
+如上面的`seqId_1`，代表序列号为1，在major compact时，将合并成一个文件
+
+如果存在多个HFile，就需要同时查询多个列族。
+
+1. 一个region只保存在一个region server中，不会跨越region server，由hdfs保证高可用
+
+### client写入
+
+通过client写入数据时，首先会把数据写入到memstore和WAL，数据到达一定的阈值，才会溢写到StoreFile，StoreFile也就是HFile
+
+## zk存储
+
+
+
+## hbase meta
+
+
+```shell
+hbase(main):053:0> list_namespace_tables 'hbase'
+TABLE 
+meta      
+namespace 
+rsgroup  
+3 row(s) in 0.0040 seconds
+```
+
+
+
+
+
+
+## GET的过程
+
+
+
+
+
+
+
+## Coprocessor
+
+
+
+
+
+
+
+
+
+##  Phoenix
+
+在没有 Phoenix 之前，用户如果需要分析 HBase 数据，只能从 HBase 拖出去或者绕过 HBase 直接读取 HDFS 上面的HFile 的方式进行，前者浪费了大量的网络IO，后者用不到 HBase 本身做的大量缓存和索引优化。Phoenix 使用 HBase 的协处理器机制，直接在 RegionServer 上执行算子逻辑，然后将算子的结果返回即可，也就是大数据中的“Move Operator to Data”理念。比如，用户执行“ `select count(*) from mytable where mytime > timestamp’2018-11-11 0:00:00’` ”，在实际执行中，会先找到符合过滤条件的region，然后在RegionServer本地计算count，最后再对各个 Region 上的结果进行汇总。
+
+索引是传统数据库中常见的技术，HBase 表中可以指定主键，对主键使用 LSM 算
+法构建索引。Phoenix 中，用户在创建表的时候，可以指定索引列，可以是单列，
+也可以是组合列。很多时候仅有主键索引是不够的，特别是对于列特别多的宽表，
+为此，Phoenix 提供二级索引功能，用户能够对表中非主键的列添加索引，并可
+以加入其它相关列到索引表中，如果某个查询涉及到的列全部在索引表中，直接
+查询索引表即可，无需访问原数据表。索引表跟原表做到实时同步更新，以保证
+数据一致性。
+
+[imooc](https://www.imooc.com/video/15575)
+
+
+
+
+
+@Controller
+    @SessionAttributes({ "credentials", "user" })
+
+## shell
+
+### HFile文件的元数据
+
+```shell
+hdfs dfs -du -h /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/
+16.0 G  /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/0e950ca090d54eb2b98abffc2e285cfa_SeqId_4_
+16.0 G  /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/bfc0c2e4fae84ba19ad1eaf78ea04967_SeqId_4_
+16.0 G  /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/e5f3675a6b0040faa695ec3b35b2e951_SeqId_4_
+6.1 G   /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/f5c2d2461e0f4eb58ed6c75aa1ae9ffa_SeqId_4_
+
+
+
+hbase hfile -m -f /hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/0e950ca090d54eb2b98abffc2e285cfa_SeqId_4_
+
+2020-03-18 14:19:37,389 INFO  [main] hfile.CacheConfig: Created cacheConfig: CacheConfig:disabled
+Block index size as per heapsize: 5288
+reader=/hbase/data/default/dal_hx_lct_700_800/999fdd6a2ed426fcb33d202195fdd7d2/i/0e950ca090d54eb2b98abffc2e285cfa_SeqId_4_,
+    compression=none,
+    cacheConf=CacheConfig:disabled,
+    firstKey=0632079511/i:v/1584411652893/Put,
+    lastKey=0938227441/i:v/1584411652893/Put,
+    avgKeyLen=23,
+    avgValueLen=1837,
+    entries=9189138,
+    length=17212333944
+Trailer:
+    fileinfoOffset=17212333262,
+    loadOnOpenDataOffset=17212330707,
+    dataIndexCount=73,
+    metaIndexCount=0,
+    totalUncomressedBytes=17207143638,
+    entryCount=9189138,
+    compressionCodec=NONE,
+    uncompressedDataIndexSize=9529760,
+    numDataIndexLevels=2,
+    firstDataBlockOffset=0,
+    lastDataBlockOffset=17212236283,
+    comparatorClassName=org.apache.hadoop.hbase.KeyValue$KeyComparator,
+    majorVersion=2,
+    minorVersion=3
+Fileinfo:
+    BULKLOAD_SOURCE_TASK = attempt_20200317094633_0002_r_000001_0
+    BULKLOAD_TIMESTAMP = \x00\x00\x01p\xE6\x81\x87\xD0
+    DELETE_FAMILY_COUNT = \x00\x00\x00\x00\x00\x00\x00\x00
+    EARLIEST_PUT_TS = \x00\x00\x01p\xE6K3\x1D
+    EXCLUDE_FROM_MINOR_COMPACTION = \x00
+    KEY_VALUE_VERSION = \x00\x00\x00\x01
+    MAJOR_COMPACTION_KEY = \xFF
+    MAX_MEMSTORE_TS_KEY = \x00\x00\x00\x00\x00\x00\x00\x00
+    TIMERANGE = 1584411652893....1584411652893
+    hfile.AVG_KEY_LEN = 23
+    hfile.AVG_VALUE_LEN = 1837
+    hfile.LASTKEY = \x00\x0A0938227441\x01iv\x00\x00\x01p\xE6K3\x1D\x04
+Mid-key: \x00\x09078540676\x00\x7F\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF
+Bloom filter:
+    Not present
+Delete Family Bloom filter:
+    Not present
+```
+
+
+    
