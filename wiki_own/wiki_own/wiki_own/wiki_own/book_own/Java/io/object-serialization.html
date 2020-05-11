@@ -1,0 +1,3477 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java序列化 · guadazi-wiki</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="averyzhang">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="java-XML-JSON.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon-32x32.webp' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon-32x32.webp' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.webp'>
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://wiki.zhangzuofeng.cn" target="_blank" class="custom-link">呱嗒子wiki</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../step.html">
+            
+                <a href="../step.html">
+            
+                    
+                    Java工程师宝典
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java语法糖</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" >
+            
+                <span>
+            
+                    
+                    常用集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1.1" data-path="../collection/collection-map.html">
+            
+                <a href="../collection/collection-map.html">
+            
+                    
+                    Java Collection与map
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" >
+            
+                <span>
+            
+                    
+                    并发集合
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.2.1" data-path="../collection/ConcurrentHashMap.html">
+            
+                <a href="../collection/ConcurrentHashMap.html">
+            
+                    
+                    ConcurrentHashMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    IO
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" >
+            
+                <span>
+            
+                    
+                    IO API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1.1" data-path="BIO.html">
+            
+                <a href="BIO.html">
+            
+                    
+                    Java IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.1.2" data-path="java-zip.html">
+            
+                <a href="java-zip.html">
+            
+                    
+                    Java 压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.1.3" data-path="java-XML-JSON.html">
+            
+                <a href="java-XML-JSON.html">
+            
+                    
+                    Java XML与JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.1.4" data-path="object-serialization.html">
+            
+                <a href="object-serialization.html">
+            
+                    
+                    Java序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" >
+            
+                <span>
+            
+                    
+                    IO与网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="IO-Model.html">
+            
+                <a href="IO-Model.html">
+            
+                    
+                    IO模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="NIO.html">
+            
+                <a href="NIO.html">
+            
+                    
+                    Java NIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../JavaWeb/Netty/Netty-theory.md">
+            
+                <span>
+            
+                    
+                    这可能是目前最透彻的Netty原理架构解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="high-performance-network-programming.html">
+            
+                <a href="high-performance-network-programming.html">
+            
+                    
+                    高性能网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    异常
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" >
+            
+                <span>
+            
+                    
+                    掌握Throwable继承体系
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.1" >
+            
+                <a target="_blank" href="http://blog.csdn.net/hguisu/article/details/6155636">
+            
+                    
+                    深入理解java异常处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" >
+            
+                <span>
+            
+                    
+                    掌握异常工作原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" >
+            
+                <span>
+            
+                    
+                    了解常见受检异常
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    多线程
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" >
+            
+                <span>
+            
+                    
+                    CPU、操作系统锁机制与Java编译优化(指令重排与内存栅栏)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../multithread/01.thread-lifecycle.html">
+            
+                <a href="../multithread/01.thread-lifecycle.html">
+            
+                    
+                    线程生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../multithread/03.volatile.html">
+            
+                <a href="../multithread/03.volatile.html">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="../multithread/01.1.monitor-synchronized.html">
+            
+                <a href="../multithread/01.1.monitor-synchronized.html">
+            
+                    
+                    monitor与Synchronized: 实现原理、偏向锁-轻型锁-重型锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.5" >
+            
+                <a target="_blank" href="http://www.cnblogs.com/waterystone/p/4920797.html">
+            
+                    
+                    AQS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.6" >
+            
+                <span>
+            
+                    
+                    CAS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.7" >
+            
+                <span>
+            
+                    
+                    RetreentLock、ReadAndWriteLook
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.8" >
+            
+                <span>
+            
+                    
+                    CountDownLatch、Atomic、Semaphore
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.9" >
+            
+                <span>
+            
+                    
+                    Fork/Join
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.10" data-path="../multithread/06.BlockingQueue.html">
+            
+                <a href="../multithread/06.BlockingQueue.html">
+            
+                    
+                    阻塞队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.11" >
+            
+                <span>
+            
+                    
+                    Disruptor队列
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.12" >
+            
+                <span>
+            
+                    
+                    生产者消费者模式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.13" data-path="../multithread/02.Lock-Semaphore-Atomic.html">
+            
+                <a href="../multithread/02.Lock-Semaphore-Atomic.html">
+            
+                    
+                    Java多线程2: Lock、信号量、原子量与队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.14" data-path="../multithread/04.thread-synchronization.html">
+            
+                <a href="../multithread/04.thread-synchronization.html">
+            
+                    
+                    Java多线程4: 同步锁与Java线程同步方法比较
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.15" data-path="../multithread/06.BlockingQueue.html">
+            
+                <a href="../multithread/06.BlockingQueue.html">
+            
+                    
+                    Java多线程6: Java阻塞队列与生产者消费者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.16" data-path="../../1">
+            
+                <span>
+            
+                    
+                    Java多线程7: 分段锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.17" >
+            
+                <a target="_blank" href="https://www.jianshu.com/p/b3c4dd85901e">
+            
+                    
+                    CompletableFuture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.18" >
+            
+                <span>
+            
+                    
+                    Quartz定时任务内部实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.19" >
+            
+                <span>
+            
+                    
+                    Guava并发包
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Socket
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../Socket.html">
+            
+                <a href="../Socket.html">
+            
+                    
+                    Java Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" >
+            
+                <span>
+            
+                    
+                    熟练使用多线程结合Socket进行编程。
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <span>
+            
+                    
+                    Stream API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" >
+            
+                <span>
+            
+                    
+                    Lambda 实现原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" >
+            
+                <span>
+            
+                    
+                    懒加载实现原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" >
+            
+                <span>
+            
+                    
+                    第三方库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" >
+            
+                <span>
+            
+                    
+                    Quartz 原理：调度与分布式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" >
+            
+                <span>
+            
+                    
+                    缓存
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.2.1" >
+            
+                <span>
+            
+                    
+                    LRUCache
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.2" >
+            
+                <span>
+            
+                    
+                    FastLRUCache
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.3" >
+            
+                <span>
+            
+                    
+                    Guava Cache
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.4" >
+            
+                <span>
+            
+                    
+                    Spring Data cache
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2.5" >
+            
+                <span>
+            
+                    
+                    Ehcache
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" >
+            
+                <span>
+            
+                    
+                    连接池：Druid
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.4" >
+            
+                <span>
+            
+                    
+                    Tomcat实现原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">JVM</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    JMM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../JVM.html">
+            
+                <a href="../JVM.html">
+            
+                    
+                    深入理解JVM(Java虚拟机)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../metric/02_CMS_GC.html">
+            
+                <a href="../metric/02_CMS_GC.html">
+            
+                    
+                    CMS GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" >
+            
+                <span>
+            
+                    
+                    G1
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    性能调优
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../metric/01_tuner.html">
+            
+                <a href="../metric/01_tuner.html">
+            
+                    
+                    Java性能专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../metric/jstack.html">
+            
+                <a href="../metric/jstack.html">
+            
+                    
+                    jstack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" >
+            
+                <span>
+            
+                    
+                    jstat、vmstat、jmap、jutil
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" >
+            
+                <span>
+            
+                    
+                    线上排查
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    类加载
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" >
+            
+                <span>
+            
+                    
+                    掌握类的加载阶段：加载、链接（验证、准备、解析）、初始化、使用、卸载。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" >
+            
+                <span>
+            
+                    
+                    掌握类加载器分类及其应用：启动类加载器、扩展类加载器、应用程序类加载器、自定义加载器。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" >
+            
+                <span>
+            
+                    
+                    双亲委派
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" >
+            
+                <span>
+            
+                    
+                    动态加载
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" >
+            
+                <span>
+            
+                    
+                    CodeGen
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">J2EE</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    J2EE
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../JavaWeb/JSP.md">
+            
+                <span>
+            
+                    
+                    JSP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../JavaWeb/Servlet.md">
+            
+                <span>
+            
+                    
+                    Servlet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../JavaWeb/Spring/base.md">
+            
+                <span>
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../JavaWeb/Struts2-basic">
+            
+                <span>
+            
+                    
+                    Struts2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../1">
+            
+                <span>
+            
+                    
+                    Spring MVC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" >
+            
+                <span>
+            
+                    
+                    Spring MVC: 线程安全、请求原理、事务与传递、异步
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" >
+            
+                <span>
+            
+                    
+                    ORM
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.7.1" data-path="../../JavaWeb/Hibernate/concept">
+            
+                <span>
+            
+                    
+                    Hibernate基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7.2" data-path="../../JavaWeb/Hibernate/Association-Relationship.md">
+            
+                <span>
+            
+                    
+                    Hibernate关联关系XML实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7.3" data-path="../../JavaWeb/Hibernate/Annotation.md">
+            
+                <span>
+            
+                    
+                    Hibernate注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7.4" data-path="../../1">
+            
+                <span>
+            
+                    
+                    MyBatis原理与缓存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">计算机基础</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    数据结构与算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" >
+            
+                <span>
+            
+                    
+                    数据结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1.1" >
+            
+                <a target="_blank" href="http://www.docin.com/p-1532910757.html">
+            
+                    
+                    线性表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.1.2" >
+            
+                <a target="_blank" href="http://www.docin.com/p-682548027.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.1.3" >
+            
+                <span>
+            
+                    
+                    B-Tree节点结构
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" >
+            
+                <span>
+            
+                    
+                    算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.2.1" data-path="../../data-struct/SortAndSearchAlgrithom.md">
+            
+                <span>
+            
+                    
+                    常用排序和查找算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.2" >
+            
+                <span>
+            
+                    
+                    熟练运用常见排序和查找算法思想解决编程问题: Top K问题、大数组查找TopN、数组去重、跳台阶问题、不定长字符串转定长字符串
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2.3" data-path="../../data-struct/BasicAlgrithom.md">
+            
+                <span>
+            
+                    
+                    几大基本算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    计算机网络
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1.1" data-path="../../network/base.html">
+            
+                <a href="../../network/base.html">
+            
+                    
+                    计算机网络基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.2" >
+            
+                <span>
+            
+                    
+                    Http报文、状态码
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.1.3" >
+            
+                <span>
+            
+                    
+                    掌握TCP/IP的通信原理(三次握手、四次挥手)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" >
+            
+                <span>
+            
+                    
+                    安全与加密
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.2.1" data-path="../../network/security/HTTPS-SSL.html">
+            
+                <a href="../../network/security/HTTPS-SSL.html">
+            
+                    
+                    HTTPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2.2" data-path="../../network/security/encrypt-decrypt-signature-certificate.html">
+            
+                <a href="../../network/security/encrypt-decrypt-signature-certificate.html">
+            
+                    
+                    加密、验签与证书
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    数据库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" >
+            
+                <span>
+            
+                    
+                    数据库设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1.1" data-path="../../database/concept.html">
+            
+                <a href="../../database/concept.html">
+            
+                    
+                    数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" >
+            
+                <span>
+            
+                    
+                    MySQL
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.2.1" data-path="../../database/MySQL/base.html">
+            
+                <a href="../../database/MySQL/base.html">
+            
+                    
+                    MySQL语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2.2" >
+            
+                <a target="_blank" href="http://www.jb51.net/article/24392.htm">
+            
+                    
+                    MySQL 性能优化的最佳20多条经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2.3" >
+            
+                <span>
+            
+                    
+                    InnoDB数据结构、索引
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2.4" >
+            
+                <span>
+            
+                    
+                    InnoDB与MyASIM区别
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2.5" >
+            
+                <span>
+            
+                    
+                    行级锁与表级锁
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" >
+            
+                <span>
+            
+                    
+                    MySQL集群
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.3.1" >
+            
+                <span>
+            
+                    
+                    集群
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3.2" >
+            
+                <span>
+            
+                    
+                    读写分离与实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3.3" >
+            
+                <span>
+            
+                    
+                    双写
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.4" >
+            
+                <span>
+            
+                    
+                    熟悉高并发、大数据情况下的数据库开发。
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                    操作系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1" >
+            
+                <span>
+            
+                    
+                    基础理论
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.1.1" >
+            
+                <span>
+            
+                    
+                    掌握操作系统的进程管理。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.1.2" >
+            
+                <span>
+            
+                    
+                    了解操作系统的I/O。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.1.3" >
+            
+                <span>
+            
+                    
+                    Linux系统调优: 命令与方法
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.4.2.1" >
+            
+                <span>
+            
+                    
+                    熟练运用Linux常见命令。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2.2" >
+            
+                <span>
+            
+                    
+                    熟悉Linux操作系统基本概念及特点。
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4.2.3" >
+            
+                <a target="_blank" href="http://www.codeceo.com/article/shell-learn-30-mins.html">
+            
+                    
+                    Shell脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../design-pattern/base.md">
+            
+                <span>
+            
+                    
+                    常见设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安全</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                    安全
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1.1" data-path="../../web/XSS">
+            
+                <span>
+            
+                    
+                    XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.2" data-path="../../web/JSONP.html">
+            
+                <a href="../../web/JSONP.html">
+            
+                    
+                    CROS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.3" >
+            
+                <span>
+            
+                    
+                    RTFS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.4" >
+            
+                <span>
+            
+                    
+                    加密解密与验签
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.5" >
+            
+                <span>
+            
+                    
+                    HTTPS
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.1.6" >
+            
+                <span>
+            
+                    
+                    跨域请求的方法
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">分布式</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    分布式事务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" >
+            
+                <span>
+            
+                    
+                    分布式锁：基于DB事务、基于Redis、基于ZooKeeper
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.2" >
+            
+                <span>
+            
+                    
+                    ACID
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.3" >
+            
+                <span>
+            
+                    
+                    CAP、BASE
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.1.4" >
+            
+                <span>
+            
+                    
+                    TCC
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                    分布式缓存
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" >
+            
+                <span>
+            
+                    
+                    分布式缓存及其集群: 雪崩、穿透、Master选举切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.2" data-path="../../database/Redis/base.html">
+            
+                <a href="../../database/Redis/base.html">
+            
+                    
+                    Redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2.3" data-path="../../database/memcached/base.html">
+            
+                <a href="../../database/memcached/base.html">
+            
+                    
+                    Memcached
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    微服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../../1">
+            
+                <span>
+            
+                    
+                    Dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../../distributed/RPC.md">
+            
+                <span>
+            
+                    
+                    RPC
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    分库分表
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.4.1" >
+            
+                <span>
+            
+                    
+                    常见分库分表方案：水平分表与垂直分表的业务设计
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.2" >
+            
+                <span>
+            
+                    
+                    扩容与迁移
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.3" >
+            
+                <span>
+            
+                    
+                    MyCat
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.4" >
+            
+                <span>
+            
+                    
+                    Sharding-JDBC
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    中间件
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.5.1" >
+            
+                <span>
+            
+                    
+                    Nginx: 原理、负载均衡算法、动态切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5.2" >
+            
+                <span>
+            
+                    
+                    消息中间件 Kafka、ActiveMQ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5.3" >
+            
+                <span>
+            
+                    
+                    ZooKeeper: 数据结构、集群、Master选举切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5.4" >
+            
+                <span>
+            
+                    
+                    唯一主键生成器
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5.5" >
+            
+                <span>
+            
+                    
+                    算法: 一致性hash、轮询、Paxos、fast leader、raft
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    系统设计
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.6.1" >
+            
+                <span>
+            
+                    
+                    高可用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6.2" >
+            
+                <span>
+            
+                    
+                    可扩展
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6.3" >
+            
+                <span>
+            
+                    
+                    限流(滑动窗口、漏桶、令牌桶)
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6.4" >
+            
+                <span>
+            
+                    
+                    幂等
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    常见场景
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.7.1" >
+            
+                <span>
+            
+                    
+                    电商
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    容器化
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">大数据</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    实时计算: 基数算法
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" >
+            
+                <span>
+            
+                    
+                    Storm 原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" >
+            
+                <span>
+            
+                    
+                    Flink 原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    Hadoop
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" >
+            
+                <span>
+            
+                    
+                    NameNode动态切换
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" >
+            
+                <span>
+            
+                    
+                    MapReduce与shuffle、数据倾斜问题
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" >
+            
+                <span>
+            
+                    
+                    Yarn
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    HBase
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" >
+            
+                <span>
+            
+                    
+                    Kylin
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.5" >
+            
+                <span>
+            
+                    
+                    Hive
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.6" >
+            
+                <span>
+            
+                    
+                    Lucene、solar、ElasticSearch
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.7" >
+            
+                <span>
+            
+                    
+                    爬虫
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.8" >
+            
+                <span>
+            
+                    
+                    推荐算法：协同过滤
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.9" >
+            
+                <span>
+            
+                    
+                    画像系统原理
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">机器学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../../interview.md">
+            
+                <span>
+            
+                    
+                    虐菜
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" >
+            
+                <span>
+            
+                    
+                    Web技术
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.2.1" data-path="../../web/AJAX.html">
+            
+                <a href="../../web/AJAX.html">
+            
+                    
+                    AJAX工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2.2" data-path="../../web/JQuery.md">
+            
+                <span>
+            
+                    
+                    JQuery框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PLN</li>
+        
+        
+    
+        <li class="chapter " data-level="12.1" >
+            
+                <span>
+            
+                    
+                    2018 中期计划
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1.1" data-path="../../distributed/tomcat/principle.md">
+            
+                <span>
+            
+                    
+                    apache Tomcat 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.2" data-path="../../distributed/storm/principle.md">
+            
+                <span>
+            
+                    
+                    apache Storm 源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.3" data-path="../multithread/disruptor_principle.md">
+            
+                <span>
+            
+                    
+                    disruptor源码分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.4" >
+            
+                <span>
+            
+                    
+                    分布式服务架构：原理、设计与实战
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="12.1.5" >
+            
+                <span>
+            
+                    
+                    HBase
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工具</li>
+        
+        
+    
+        <li class="chapter " data-level="13.1" >
+            
+                <span>
+            
+                    
+                    正则表达式
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1.1" data-path="../regular-expression.html">
+            
+                <a href="../regular-expression.html">
+            
+                    
+                    常用的正则表达式与Java中的运用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Java序列化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5E8F;&#x5217;&#x5316;"><b></b>&#x5E8F;&#x5217;&#x5316;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;"><b></b>&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x73B0;&#x8981;&#x70B9;"><b></b>&#x5B9E;&#x73B0;&#x8981;&#x70B9;</a></li><ul><li><span class="title-icon "></span><a href="#serializable&#x63A5;&#x53E3;"><b></b>Serializable&#x63A5;&#x53E3;</a></li><li><span class="title-icon "></span><a href="#serialversionuid"><b></b>SerialVersionUID</a></li><li><span class="title-icon "></span><a href="#objectoutputstream"><b></b>ObjectOutputStream</a></li></ul></ul><li><span class="title-icon "></span><a href="#&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;"><b></b>&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;</a></li><li><span class="title-icon "></span><a href="#&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;"><b></b>&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;</a></li><li><span class="title-icon "></span><a href="#&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;"><b></b>&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x5168;&#x6027;"><b></b>&#x5B89;&#x5168;&#x6027;</a></li><ul><li><span class="title-icon "></span><a href="#&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;"><b></b>&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;</a></li></ul><li><span class="title-icon "></span><a href="#&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;"><b></b>&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;</a></li><li><span class="title-icon "></span><a href="#&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;"><b></b>&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;</a></li><li><span class="title-icon "></span><a href="#&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;"><b></b>&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;</a></li><li><span class="title-icon "></span><a href="#&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;"><b></b>&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;</a></li><li><span class="title-icon "></span><a href="#&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable"><b></b>&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;Externalizable</a></li><li><span class="title-icon "></span><a href="#&#x7591;&#x95EE;"><b></b>&#x7591;&#x95EE;:</a></li><li><span class="title-icon "></span><a href="#&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;"><b></b>&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;</a></li><ul><li><span class="title-icon "></span><a href="#kryo"><b></b>kryo</a></li></ul></ul></div><a href="#&#x5E8F;&#x5217;&#x5316;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="../advanced-engineer-outline">&lt;&lt; Java&#x9AD8;&#x7EA7;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x5E08;&#x77E5;&#x8BC6;&#x7ED3;&#x6784;</a></p>
+<ol>
+<li>&#x638C;&#x63E1;InputStream&#x3001;OutputStream&#x3001;Reader&#x3001;Writer&#x7684;&#x7EE7;&#x627F;&#x4F53;&#x7CFB;.</li>
+<li>&#x638C;&#x63E1;&#x5B57;&#x8282;&#x6D41;(FileInputStream&#x3001;DataInputStream&#x3001;BufferedInputStream&#x3001;FileOutputSteam&#x3001;DataOutputStream&#x3001;BufferedOutputStream)&#x548C; &#x5B57;&#x7B26;&#x6D41;(BufferedReader&#x3001;InputStreamReader&#x3001;FileReader&#x3001;BufferedWriter&#x3001;OutputStreamWriter&#x3001;PrintWriter&#x3001;FileWriter), &#x5E76;&#x719F;&#x7EC3;&#x8FD0;&#x7528;.</li>
+<li>&#x638C;&#x63E1;NIO&#x5B9E;&#x73B0;&#x539F;&#x7406;&#x53CA;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;.</li>
+</ol>
+<p>Java IO&#x5305;&#x62EC;:</p>
+<ul>
+<li><a href="IO-Model">IO Model</a></li>
+<li><a href="BIO">Java BIO</a></li>
+<li><a href="NIO">Java NIO</a></li>
+<li><a href="AIO">Java AIO</a></li>
+<li><a href="java-zip">Java&#x538B;&#x7F29;</a></li>
+<li><a href="object-serialization">Java&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;</a></li>
+<li><a href="java-XML-JSON">Java XML&#x4E0E;JSON</a></li>
+</ul>
+<h1 id="&#x5E8F;&#x5217;&#x5316;"><a name="&#x5E8F;&#x5217;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E8F;&#x5217;&#x5316;" class="plugin-anchor" href="#&#x5E8F;&#x5217;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E8F;&#x5217;&#x5316;</h1>
+<p>&#x6240;&#x8C13;&#x5E8F;&#x5217;&#x5316;&#x662F;&#x5C06;&#x5185;&#x5B58;&#x4E2D;Java&#x5BF9;&#x8C61;&#x8F6C;&#x5316;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x8282;&#x6570;&#x636E;, &#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5C31;&#x662F;&#x4ECE;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x8282;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x4E3A;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;.  </p>
+<ul>
+<li>&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;: Java&#x5E8F;&#x5217;&#x5316;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x8282;&#x6570;&#x636E;, &#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x5230;&#x6587;&#x4EF6;&#x4E2D;.</li>
+<li>&#x590D;&#x5236;&#x5BF9;&#x8C61;&#xFF1A;&#x7531;&#x4E8E;Java&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x4EC5;&#x4EC5;&#x662F;&#x6808;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6307;&#x9488;, &#x800C;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x5728;&#x5806;&#x5185;&#x5B58;&#x4E2D;. &#x5F53;<code>clone</code>&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x65F6;, &#x53EA;&#x662F;&#x5C06;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x53D8;&#x91CF;&#x590D;&#x5236;, &#x800C;&#x6CA1;&#x6709;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;. &#x8FD9;&#x88AB;&#x79F0;&#x4E3A;<strong><code>&#x6D45;&#x590D;&#x5236;</code></strong>&#xFF1B;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;, &#x4F7F;&#x7528;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x65B9;&#x6CD5;, &#x53EF;&#x4EE5;&#x5C06;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x8F6C;&#x6362;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x8282;&#x6570;&#x7EC4;, &#x518D;<code>&#x53CD;&#x5E8F;&#x5217;&#x5316;</code>&#x4FBF;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;, &#x8FD9;&#x5C31;&#x662F;<code>&#x6DF1;&#x590D;&#x5236;</code>.</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;</li>
+</ul>
+<h2 id="&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;"><a name="&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;" class="plugin-anchor" href="#&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x7684;&#x6837;&#x4F8B;</h2>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">123l</span>;
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> birthday;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Person{&quot;</span> +
+                <span class="hljs-string">&quot;name=&apos;&quot;</span> + name + <span class="hljs-string">&apos;\&apos;&apos;</span> +
+                <span class="hljs-string">&quot;, age=&quot;</span> + age +
+                <span class="hljs-string">&quot;, birthday=&quot;</span> + birthday +
+                <span class="hljs-string">&apos;}&apos;</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age, <span class="hljs-keyword">long</span> birthday)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.age = age;
+        <span class="hljs-keyword">this</span>.birthday = birthday;
+    }
+   ....<span class="hljs-comment">// getter setter</span>
+}
+</code></pre>
+<h2 id="&#x5B9E;&#x73B0;&#x8981;&#x70B9;"><a name="&#x5B9E;&#x73B0;&#x8981;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x8981;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B9E;&#x73B0;&#x8981;&#x70B9;" class="plugin-anchor" href="#&#x5B9E;&#x73B0;&#x8981;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x8981;&#x70B9;</h2>
+<h3 id="serializable&#x63A5;&#x53E3;"><a name="serializable&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#serializable&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="serializable&#x63A5;&#x53E3;" class="plugin-anchor" href="#serializable&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>Serializable&#x63A5;&#x53E3;</h3>
+<p>Java&#x662F;&#x901A;&#x8FC7;&#x5B9E;&#x73B0;Serializable&#x63A5;&#x53E3;, &#x5B9E;&#x73B0;&#x7684;&#x5E8F;&#x5217;&#x5316;, Serializable&#x63A5;&#x53E3;&#x91CC;&#x9762;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x65B9;&#x6CD5;, &#x53EA;&#x662F;&#x4E2A;&#x6807;&#x793A;&#x63A5;&#x53E3;.</p>
+<h3 id="serialversionuid"><a name="serialversionuid" class="anchor-navigation-ex-anchor" href="#serialversionuid"><i class="fa fa-link" aria-hidden="true"></i></a><a name="serialversionuid" class="plugin-anchor" href="#serialversionuid"><i class="fa fa-link" aria-hidden="true"></i></a>SerialVersionUID</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = ...;
+</code></pre>
+<p><code>serialVersionUID</code>&#x53D8;&#x91CF;&#x7528;&#x4E8E;&#x6807;&#x8BB0;&#x8BE5;&#x7C7B;&#x7684;&#x7248;&#x672C;UID.</p>
+<p>Java&#x4F7F;&#x7528;&#x4E00;&#x79CD;<code>hash</code>&#x503C;&#x6765;&#x5FEB;&#x901F;&#x7684;&#x533A;&#x5206;&#x5E8F;&#x5217;&#x5316;&#x6D41;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x4E0E;&#x8981;&#x8F6C;&#x6362;&#x4E3A;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x76F8;&#x540C;. &#x8BE5; <code>hash</code>&#x503C; &#x662F;&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x6E90;&#x6587;&#x4EF6;&#x4E2D;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x4E1C;&#x897F; &#x2014; &#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x3001;&#x5B57;&#x6BB5;&#x540D;&#x79F0;&#x3001;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x3001;&#x8BBF;&#x95EE;&#x4FEE;&#x6539;&#x65B9;&#x6CD5;&#x7B49; &#x2014; &#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;, &#x5E8F;&#x5217;&#x5316;&#x5C06;&#x8BE5; hash &#x503C;&#x4E0E;&#x5E8F;&#x5217;&#x5316;&#x6D41;&#x4E2D;&#x7684; hash &#x503C;&#x76F8;&#x6BD4;&#x8F83;. &#x8FD9;&#x4E2A;<code>hash</code>&#x503C;&#x5C31;&#x662F;<code>serialVersionUID</code>&#xFF0C;<code>serialVersionUID</code>&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x6307;&#x5B9A;, &#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;, Java&#x5C06;&#x4F7F;&#x7528; JDK<code>serialver</code> &#x547D;&#x4EE4;&#x8BA1;&#x7B97;&#x51FA;.</p>
+<h3 id="objectoutputstream"><a name="objectoutputstream" class="anchor-navigation-ex-anchor" href="#objectoutputstream"><i class="fa fa-link" aria-hidden="true"></i></a><a name="objectoutputstream" class="plugin-anchor" href="#objectoutputstream"><i class="fa fa-link" aria-hidden="true"></i></a>ObjectOutputStream</h3>
+<p>&#x5B9E;&#x9645;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5DE5;&#x4F5C;&#x662F;&#x901A;&#x8FC7;ObjectOuputStream&#x548C;ObjectInputStream&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;ObjectOutputStream&#x7684;writeObject&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x628A;&#x4E00;&#x4E2A;Java&#x5BF9;&#x8C61;&#x5199;&#x5165;&#x5230;&#x6D41;&#x4E2D;&#xFF0C;ObjectInputStream&#x7684;readObject&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4ECE;&#x6D41;&#x4E2D;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;Java&#x5BF9;&#x8C61;&#x3002;&#x5728;&#x5199;&#x5165;&#x548C;&#x8BFB;&#x53D6;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x867D;&#x7136;&#x7528;&#x7684;&#x53C2;&#x6570;&#x6216;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x64CD;&#x7EB5;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x56FE;&#xFF0C;&#x5305;&#x62EC;&#x8BE5;&#x5BF9;&#x8C61;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5176;&#x5B83;&#x5BF9;&#x8C61;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x6240;&#x5F15;&#x7528;&#x7684;&#x53E6;&#x5916;&#x7684;&#x5BF9;&#x8C61;&#x3002;Java&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x4F60;&#x904D;&#x5386;&#x5BF9;&#x8C61;&#x56FE;&#x5E76;&#x9010;&#x4E2A;&#x5E8F;&#x5217;&#x5316;&#x3002;&#x9664;&#x4E86;&#x5BF9;&#x8C61;&#x4E4B;&#x5916;&#xFF0C;Java&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x6570;&#x7EC4;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; ObjectOutputStream&#x548C;ObjectInputStream&#x6765;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x3002;
+&#x4E0B;&#x9762;&#x7684;&#x6DF1;&#x590D;&#x5236;&#x662F;&#x5C06;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x7EC4;&#x4F5C;&#x4E3A;&#x5A92;&#x4ECB;&#x6765;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x7684;. <a href="BIO">&#x5173;&#x4E8E;ObjectOutputStream&#x8BE6;&#x60C5;&#x8BF7;&#x770B;</a></p>
+<h1 id="&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;"><a name="&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;" class="anchor-navigation-ex-anchor" href="#&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;" class="plugin-anchor" href="#&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6DF1;&#x590D;&#x5236;&#x4E0E;&#x6D45;&#x590D;&#x5236;</h1>
+<p>&#x57FA;&#x7840;&#x53D8;&#x91CF;&#x548C;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x90FD;&#x662F;&#x4FDD;&#x5B58;&#x5728;JVM&#x6808;&#x5185;&#x5B58;(<code>stack</code>)&#x4E4B;&#x4E2D;&#x7684;, &#x800C;&#x5BF9;&#x8C61;&#x4FDD;&#x5B58;&#x5728;JVM&#x5806;(Heap)&#x5185;&#x5B58;&#x4E2D;.<sup><a href="#fn_JVM&#x7ED3;&#x6784;" id="reffn_JVM&#x7ED3;&#x6784;">JVM&#x7ED3;&#x6784;</a></sup></p>
+<p>&#x5B9E;&#x73B0;<code>Clonable</code>&#x63A5;&#x53E3;, &#x5E76;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x4E0A;&#x7684;<code>clone</code>&#x65B9;&#x6CD5;, &#x53EA;&#x4F1A;&#x5C06;JVM&#x6808;&#x5185;&#x5B58;(stack)&#x590D;&#x5236;&#x5230;&#x65B0;&#x5BF9;&#x8C61;&#x4E4B;&#x4E2D;. &#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x6240;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x5B9E;&#x4F53;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;.  &#x8FD9;&#x5C31;&#x662F;<code>&#x6D45;&#x590D;&#x5236;</code>.</p>
+<p>&#x4E3A;&#x4E86;&#x53EF;&#x4EE5;&#x590D;&#x5236;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x7684;&#x5185;&#x5BB9;, &#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x5C06;&#x76EE;&#x6807;&#x5E8F;&#x5217;&#x5316;&#x5230;&#x5185;&#x5B58;&#x4E2D;, &#x8F6C;&#x6362;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;, &#x7136;&#x540E;&#x518D;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x56DE;&#x5BF9;&#x8C61;. &#x8FD9;&#x5C31;&#x662F;&quot;<code>&#x6DF1;&#x590D;&#x5236;</code>&quot;.</p>
+<p>&#x4E0A;&#x4EE3;&#x7801;:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ShallowCopy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Cloneable</span>, <span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-comment">/**
+     * &#x6D45;&#x590D;&#x5236;
+     */</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> ShallowCopy <span class="hljs-title">clone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> CloneNotSupportedException </span>{
+        <span class="hljs-keyword">return</span> (ShallowCopy) <span class="hljs-keyword">super</span>.clone();
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6DF1;&#x590D;&#x5236;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ShallowCopy <span class="hljs-title">deepClone</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException, ClassNotFoundException </span>{
+        ByteArrayOutputStream baos = <span class="hljs-keyword">new</span> ByteArrayOutputStream();
+        ObjectOutputStream oos = <span class="hljs-keyword">new</span> ObjectOutputStream(baos);
+        oos.writeObject(<span class="hljs-keyword">this</span>);
+
+        ByteArrayInputStream bis = <span class="hljs-keyword">new</span> ByteArrayInputStream(baos.toByteArray());
+        ObjectInputStream ois = <span class="hljs-keyword">new</span> ObjectInputStream(bis);
+        ShallowCopy shallowCopy = (ShallowCopy) ois.readObject();
+        <span class="hljs-keyword">return</span> shallowCopy;
+    }
+}
+</code></pre>
+<h1 id="&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;"><a name="&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;" class="plugin-anchor" href="#&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E8F;&#x5217;&#x5316;&#x591A;&#x4E2A;&#x76EE;&#x6807;</h1>
+<p>&#x5982;&#x4E0A;&#x6587;&#x6240;&#x8FF0;, &#x5E8F;&#x5217;&#x5316;&#x662F;&#x5C06;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x8282;&#x6570;&#x7EC4;, &#x9700;&#x8981;<code>ObjectOutputStream</code>&#x548C;<code>ObjectInputStream</code>&#x5B9E;&#x73B0;. &#x56E0;&#x6B64;, &#x53EF;&#x4EE5;&#x5411;<code>ObjectOutputStream</code>&#x8F93;&#x51FA;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;, &#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;<code>ObjectInputStream</code>&#x4E2D;&#x8F93;&#x5165;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;.</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeObjects</span><span class="hljs-params">(List os, String fileName)</span> </span>{
+    FileOutputStream outputStream = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">try</span> {
+        outputStream = <span class="hljs-keyword">new</span> FileOutputStream(fileName);
+        ObjectOutputStream stream = <span class="hljs-keyword">new</span> ObjectOutputStream(outputStream);
+        <span class="hljs-keyword">for</span> (Object o : os) {
+            stream.writeObject(o);
+        }
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">if</span> (outputStream != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">try</span> {
+                outputStream.close();
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; <span class="hljs-function">List&lt;T&gt; <span class="hljs-title">readObjects</span><span class="hljs-params">(String fileName, Class&lt;T&gt; clasz)</span> </span>{
+    FileInputStream inputStream = <span class="hljs-keyword">null</span>;
+    T result = <span class="hljs-keyword">null</span>;
+    List&lt;T&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;T&gt;();
+    <span class="hljs-keyword">try</span> {
+        inputStream = <span class="hljs-keyword">new</span> FileInputStream(fileName);
+        ObjectInputStream in = <span class="hljs-keyword">new</span> ObjectInputStream(inputStream);
+        Object object = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">while</span> ((object = in.readObject()) != <span class="hljs-keyword">null</span>) {
+            result = (T) object;
+            list.add(result);
+        }
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        e.printStackTrace();
+    } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-keyword">if</span> (inputStream != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">try</span> {
+                inputStream.close();
+            } <span class="hljs-keyword">catch</span> (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> list;
+}
+</code></pre>
+<h1 id="&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;"><a name="&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;" class="plugin-anchor" href="#&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x91CD;&#x6784;</h1>
+<p>&#x5E8F;&#x5217;&#x5316;&#x5728;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;&#x7684;&#x540C;&#x65F6;, &#x4E5F;&#x5C31;&#x4FDD;&#x5B58;&#x4E86;&#x6570;&#x636E;. &#x5E8F;&#x5217;&#x5316;&#x4E5F;&#x6210;&#x4E3A;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#x4E4B;&#x4E00;. &#x4E0E;&#x6570;&#x636E;&#x5E93;&#x3001;XML&#x6216;JSON&#x7B49;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;, &#x5E8F;&#x5217;&#x5316;&#x4F9D;&#x8D56;&#x4E8E;&#x5BF9;&#x8C61;&#x4F53;. &#x5F53;&#x53D8;&#x66F4;&#x6570;&#x636E;&#x9879;&#x65F6;, &#x9700;&#x8981;&#x4FEE;&#x6539;&#x7C7B;. &#x5E8F;&#x5217;&#x5316;&#x662F;&#x5141;&#x8BB8;&#x91CD;&#x6784;&#x7684;.</p>
+<p>&#x5E8F;&#x5217;&#x5316;&#x5141;&#x8BB8;&#x4E00;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7C7B;&#x53D8;&#x79CD;, &#x751A;&#x81F3;&#x91CD;&#x6784;&#x4E4B;&#x540E;&#x4E5F;&#x662F;&#x5982;&#x6B64;, ObjectInputStream &#x4ECD;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x5730;&#x5C06;&#x5176;&#x8BFB;&#x51FA;&#x6765;.
+Java Object Serialization &#x89C4;&#x8303;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x7BA1;&#x7406;&#x7684;&#x5173;&#x952E;&#x4EFB;&#x52A1;&#x662F;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;&#x65B0;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;&#x5230;&#x7C7B;&#x4E2D;</li>
+<li>&#x5C06;&#x5B57;&#x6BB5;&#x4ECE; static &#x6539;&#x4E3A;&#x975E; static</li>
+<li>&#x5C06;&#x5B57;&#x6BB5;&#x4ECE; transient &#x6539;&#x4E3A;&#x975E; transient</li>
+</ul>
+<p>&#x53D6;&#x51B3;&#x4E8E;&#x6240;&#x9700;&#x7684;&#x5411;&#x540E;&#x517C;&#x5BB9;&#x7A0B;&#x5EA6;, &#x8F6C;&#x6362;&#x5B57;&#x6BB5;&#x5F62;&#x5F0F;&#xFF08;&#x4ECE;&#x975E; static &#x8F6C;&#x6362;&#x4E3A; static &#x6216;&#x4ECE;&#x975E; transient &#x8F6C;&#x6362;&#x4E3A; transient&#xFF09;&#x6216;&#x8005;&#x5220;&#x9664;&#x5B57;&#x6BB5;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x6D88;&#x606F;&#x4F20;&#x9012;.</p>
+<p>&#x5047;&#x8BBE;&#x8981;&#x5728;&#x4E0A;&#x9762;&#x7684;<code>Person</code>&#x7C7B;&#x589E;&#x52A0;<code>gender</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Serializable</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> serialVersionUID = <span class="hljs-number">123l</span>;
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> birthday;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> gender;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;PersonV1{&quot;</span> +
+                <span class="hljs-string">&quot;name=&apos;&quot;</span> + name + <span class="hljs-string">&apos;\&apos;&apos;</span> +
+                <span class="hljs-string">&quot;, age=&quot;</span> + age +
+                <span class="hljs-string">&quot;, birthday=&quot;</span> + birthday +
+                <span class="hljs-string">&quot;, gender=&quot;</span> + gender +
+                <span class="hljs-string">&apos;}&apos;</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age, <span class="hljs-keyword">long</span> birthday, <span class="hljs-keyword">int</span> gender)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.age = age;
+        <span class="hljs-keyword">this</span>.birthday = birthday;
+        <span class="hljs-keyword">this</span>.gender = gender;
+    }
+<span class="hljs-comment">// setter getter .....</span>
+}
+</code></pre>
+<p>&#x91CD;&#x6784;, &#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x4E24;&#x4E2A;&#x6761;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>serialVersionUID&#x5FC5;&#x987B;&#x76F8;&#x540C;</li>
+<li>&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x4E0E;&#x539F;&#x7C7B;&#x76F8;&#x540C;</li>
+</ul>
+<p>&#x4E3A;&#x4E86;&#x4F7F; Java &#x8FD0;&#x884C;&#x65F6;&#x76F8;&#x4FE1;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x6837;&#x7684;, &#x7B2C;&#x4E8C;&#x7248;&#x548C;&#x968F;&#x540E;&#x7248;&#x672C;&#x7684; <code>Person</code> &#x5FC5;&#x987B;&#x4E0E;&#x7B2C;&#x4E00;&#x7248;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x7248;&#x672C; hash&#xFF08;&#x5B58;&#x50A8;&#x4E3A; private static final <code>serialVersionUID</code> &#x5B57;&#x6BB5;&#xFF09;. &#x56E0;&#x6B64;, &#x6211;&#x4EEC;&#x9700;&#x8981; <code>serialVersionUID</code> &#x5B57;&#x6BB5;, &#x5B83;&#x662F;&#x901A;&#x8FC7;&#x5BF9;&#x539F;&#x59CB;&#xFF08;&#x6216; V1&#xFF09;&#x7248;&#x672C;&#x7684; <code>Person</code> &#x7C7B;&#x8FD0;&#x884C; JDK<code>serialver</code> &#x547D;&#x4EE4;&#x8BA1;&#x7B97;&#x51FA;&#x7684;.</p>
+<p>&#x4E00;&#x65E6;&#x6709;&#x4E86; <code>Person</code> &#x7684; <code>serialVersionUID</code>, &#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x4ECE;&#x539F;&#x59CB;&#x5BF9;&#x8C61; <code>Person</code> &#x7684;&#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x521B;&#x5EFA; <code>PersonV2</code> &#x5BF9;&#x8C61;&#xFF08;&#x5F53;&#x51FA;&#x73B0;&#x65B0;&#x5B57;&#x6BB5;&#x65F6;, &#x65B0;&#x5B57;&#x6BB5;&#x88AB;&#x8BBE;&#x4E3A;&#x7F3A;&#x7701;&#x503C;, &#x6700;&#x5E38;&#x89C1;&#x7684;&#x662F;&#x201C;null&#x201D;&#xFF09;, &#x8FD8;&#x53EF;&#x4EE5;&#x53CD;&#x8FC7;&#x6765;&#x505A;&#xFF1A;&#x5373;&#x4ECE; <code>PersonV2</code> &#x7684;&#x6570;&#x636E;&#x901A;&#x8FC7;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5F97;&#x5230; <code>Person</code>, &#x8FD9;&#x6BEB;&#x4E0D;&#x5947;&#x602A;.</p>
+<h1 id="&#x5B89;&#x5168;&#x6027;"><a name="&#x5B89;&#x5168;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x5168;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B89;&#x5168;&#x6027;" class="plugin-anchor" href="#&#x5B89;&#x5168;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x5168;&#x6027;</h1>
+<p>Java&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x7684;&#x5185;&#x5BB9;&#x683C;&#x5F0F;&#x662F;&#x516C;&#x5F00;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x4ECE;&#x4E2D;&#x63D0;&#x53D6;&#x51FA;&#x5404;&#x79CD;&#x4FE1;&#x606F;&#x3002;&#x4ECE;&#x5B9E;&#x73B0;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x5C42;&#x6B21;&#x6765;&#x52A0;&#x5F3A;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;
+&#x5BF9;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x7684;&#x6D41;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x3002;&#x8FD9;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;CipherOutputStream&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;writeObject&#x548C;readObject&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x8C03;&#x7528;defaultWriteObject&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x5BF9;&#x8981;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x57DF;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x5904;&#x7406;&#x3002;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;SignedObject&#x6216;SealedObject&#x6765;&#x5C01;&#x88C5;&#x5F53;&#x524D;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;SignedObject&#x6216;SealedObject&#x8FDB;&#x884C;&#x5E8F;&#x5217;&#x5316;&#x3002;&#x5728;&#x4ECE;&#x6D41;&#x4E2D;&#x8FDB;&#x884C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;ObjectInputStream&#x7684;registerValidation&#x65B9;&#x6CD5;&#x6DFB;&#x52A0;ObjectInputValidation&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x7528;&#x6765;&#x9A8C;&#x8BC1;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x5F97;&#x5230;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5408;&#x6CD5;&#x3002;</p>
+<h2 id="&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;"><a name="&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;" class="plugin-anchor" href="#&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x3000;&#x81EA;&#x5B9A;&#x4E49;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x63D0;&#x9AD8;&#x5B89;&#x5168;&#x6027;</h2>
+<p>&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x88AB;&#x6076;&#x610F;&#x5229;&#x7528;, &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6A21;&#x7CCA;&#x5316;&#x9700;&#x8981;&#x4FDD;&#x5BC6;&#x7684;&#x5B57;&#x6BB5;. &#x6B64;&#x5904;, hook<code>Person</code>&#x7C7B;&#x4E2D;&#x7684;<code>age</code>&#x5B57;&#x6BB5;, &#x5728;&#x4E0A;&#x9762;&#x7684;<code>Person</code>&#x7C7B;&#x4E2D;&#x6DFB;&#x52A0;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;:</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+* &#x81EA;&#x5B9A;&#x4E49;&#x5C06;&#x5BF9;&#x8C61;&#x5199;&#x5165;&#x8F93;&#x51FA;&#x6D41;&#x7684;&#x65B9;&#x6CD5;&lt;br/&gt;
+* &#x6B64;&#x5904;, &#x5224;&#x65AD;&#x6027;&#x522B;&#x4E3A;&#x5973;, &#x5C06;&#x5E74;&#x9F84;&#x5DE6;&#x79FB;2&#x4E2A;&#x5355;&#x4F4D;
+* &lt;code&gt;stream.defaultWriteObject();&lt;/code&gt;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5199;&#x5165;.
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeObject</span><span class="hljs-params">(java.io.ObjectOutputStream stream)</span> <span class="hljs-keyword">throws</span> java.io.IOException </span>{
+  <span class="hljs-keyword">if</span> (gender == <span class="hljs-number">1</span>) {
+    age = age &lt;&lt; <span class="hljs-number">2</span>;
+  }
+  stream.defaultWriteObject();
+}
+<span class="hljs-comment">/**
+* &#x81EA;&#x5B9A;&#x4E49;&#x4ECE;&#x8F93;&#x5165;&#x6D41;&#x8BFB;&#x5165;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;:
+* &#x4E0E;&#x5199;&#x5BF9;&#x5E94;, &#x5728;&#x8BFB;&#x5165;&#x5BF9;&#x8C61;&#x540E;, &#x5973;&#x58EB;&#x7684;&#x5E74;&#x9F84;&#x53F3;&#x79FB;2&#x4E2A;&#x5355;&#x4F4D;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">readObject</span><span class="hljs-params">(java.io.ObjectInputStream stream)</span>
+  <span class="hljs-keyword">throws</span> java.io.IOException, ClassNotFoundException </span>{
+  stream.defaultReadObject();
+  <span class="hljs-keyword">if</span> (gender == <span class="hljs-number">1</span>) {  
+    age = age &gt;&gt; <span class="hljs-number">2</span>;
+  }
+}
+</code></pre>
+<p>&#x5F53;&#x8C03;&#x7528;<code>ObjectInputStream</code>&#x8BFB;&#x5165;&#x5BF9;&#x8C61;&#x65F6;, &#x9996;&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;Entity&#x5B9E;&#x73B0;&#x4E86;<code>readObject</code>&#x65B9;&#x6CD5;, &#x5982;&#x679C;&#x5B9E;&#x73B0;&#x4E86;&#x5C06;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;.</p>
+<h1 id="&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;"><a name="&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;" class="anchor-navigation-ex-anchor" href="#&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;" class="plugin-anchor" href="#&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B7E;&#x540D;&#x4E0E;&#x5BC6;&#x5C01;</h1>
+<p>//TODO</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5BF9;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x548C;&#x7B7E;&#x540D;, &#x6700;&#x7B80;&#x5355;&#x7684;&#x662F;&#x5C06;&#x5B83;&#x653E;&#x5728;&#x4E00;&#x4E2A; javax.crypto.SealedObject &#x548C;/&#x6216; java.security.SignedObject &#x5305;&#x88C5;&#x5668;&#x4E2D;. &#x4E24;&#x8005;&#x90FD;&#x662F;&#x53EF;&#x5E8F;&#x5217;&#x5316;&#x7684;, &#x6240;&#x4EE5;&#x5C06;&#x5BF9;&#x8C61;&#x5305;&#x88C5;&#x5728; SealedObject &#x4E2D;&#x53EF;&#x4EE5;&#x56F4;&#x7ED5;&#x539F;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x4E00;&#x79CD; &#x201C;&#x5305;&#x88C5;&#x76D2;&#x201D;. &#x5FC5;&#x987B;&#x6709;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#x624D;&#x80FD;&#x89E3;&#x5BC6;, &#x800C;&#x4E14;&#x5BC6;&#x94A5;&#x5FC5;&#x987B;&#x5355;&#x72EC;&#x7BA1;&#x7406;. &#x540C;&#x6837;, &#x4E5F;&#x53EF;&#x4EE5;&#x5C06; SignedObject &#x7528;&#x4E8E;&#x6570;&#x636E;&#x9A8C;&#x8BC1;, &#x5E76;&#x4E14;&#x5BF9;&#x79F0;&#x5BC6;&#x94A5;&#x4E5F;&#x5FC5;&#x987B;&#x5355;&#x72EC;&#x7BA1;&#x7406;.
+&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#x8FD9;&#x4E24;&#x79CD;&#x5BF9;&#x8C61;, &#x4FBF;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5730;&#x5BF9;&#x5E8F;&#x5217;&#x5316;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5BC6;&#x5C01;&#x548C;&#x7B7E;&#x540D;, &#x800C;&#x4E0D;&#x5FC5;&#x5F3A;&#x8C03;&#x5173;&#x4E8E;&#x6570;&#x5B57;&#x7B7E;&#x540D;&#x9A8C;&#x8BC1;&#x6216;&#x52A0;&#x5BC6;&#x7684;&#x7EC6;&#x8282;. &#x5F88;&#x7B80;&#x6D01;, &#x662F;&#x5427;&#xFF1F;</p>
+<h1 id="&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;"><a name="&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;" class="anchor-navigation-ex-anchor" href="#&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;" class="plugin-anchor" href="#&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C06;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;</h1>
+<p>&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;, &#x7C7B;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x6570;&#x636E;&#x5143;&#x7D20;, &#x901A;&#x8FC7;&#x5B83;&#x53EF;&#x4EE5;&#x6D3E;&#x751F;&#x6216;&#x627E;&#x5230;&#x7C7B;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x5B57;&#x6BB5;. &#x5728;&#x6B64;&#x60C5;&#x51B5;&#x4E0B;, &#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x5E8F;&#x5217;&#x5316;&#x6574;&#x4E2A;&#x5BF9;&#x8C61;. &#x53EF;&#x4EE5;&#x5C06;&#x5B57;&#x6BB5;&#x6807;&#x8BB0;&#x4E3A;<em>transient</em>, &#x4F46;&#x662F;&#x6BCF;&#x5F53;&#x6709;&#x65B9;&#x6CD5;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x65F6;, &#x7C7B;&#x4ECD;&#x7136;&#x5FC5;&#x987B;&#x663E;&#x5F0F;&#x5730;&#x4EA7;&#x751F;&#x4EE3;&#x7801;&#x6765;&#x68C0;&#x67E5;&#x5B83;&#x662F;&#x5426;&#x88AB;&#x521D;&#x59CB;&#x5316;.</p>
+<p>&#x5982;&#x679C;&#x9996;&#x8981;&#x95EE;&#x9898;&#x662F;&#x5E8F;&#x5217;&#x5316;, &#x90A3;&#x4E48;&#x6700;&#x597D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A; flyweight &#x6216;&#x4EE3;&#x7406;&#x653E;&#x5728;&#x6D41;&#x4E2D;. &#x4E3A;&#x539F;&#x59CB; <code>Person</code> &#x63D0;&#x4F9B;&#x4E00;&#x4E2A; <code>writeReplace</code> &#x65B9;&#x6CD5;, &#x53EF;&#x4EE5;&#x5E8F;&#x5217;&#x5316;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x4EE3;&#x66FF;&#x5B83;. &#x7C7B;&#x4F3C;&#x5730;, &#x5982;&#x679C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x671F;&#x95F4;&#x53D1;&#x73B0;&#x4E00;&#x4E2A; <code>readResolve</code> &#x65B9;&#x6CD5;, &#x90A3;&#x4E48;&#x5C06;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;, &#x5C06;&#x66FF;&#x4EE3;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x7ED9;&#x8C03;&#x7528;&#x8005;.</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">PersonProxy</span><span class="hljs-params">(Person orig)</span></span>{
+        data = orig.getFirstName() + <span class="hljs-string">&quot;,&quot;</span> + orig.getLastName() + <span class="hljs-string">&quot;,&quot;</span> + orig.getAge();
+        <span class="hljs-keyword">if</span> (orig.getSpouse() != <span class="hljs-keyword">null</span>)
+        {
+            Person spouse = orig.getSpouse();
+            data = data + <span class="hljs-string">&quot;,&quot;</span> + spouse.getFirstName() + <span class="hljs-string">&quot;,&quot;</span> + spouse.getLastName() + <span class="hljs-string">&quot;,&quot;</span>  
+              + spouse.getAge();
+        }
+    }
+
+    <span class="hljs-keyword">public</span> String data;
+    <span class="hljs-function"><span class="hljs-keyword">private</span> Object <span class="hljs-title">readResolve</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> java.io.ObjectStreamException</span>{
+        String[] pieces = data.split(<span class="hljs-string">&quot;,&quot;</span>);
+        Person result = <span class="hljs-keyword">new</span> Person(pieces[<span class="hljs-number">0</span>], pieces[<span class="hljs-number">1</span>], Integer.parseInt(pieces[<span class="hljs-number">2</span>]));
+        <span class="hljs-keyword">if</span> (pieces.length &gt; <span class="hljs-number">3</span>)
+        {
+            result.setSpouse(<span class="hljs-keyword">new</span> Person(pieces[<span class="hljs-number">3</span>], pieces[<span class="hljs-number">4</span>], Integer.parseInt
+              (pieces[<span class="hljs-number">5</span>])));
+            result.getSpouse().setSpouse(result);
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">java</span>.<span class="hljs-title">io</span>.<span class="hljs-title">Serializable</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String fn, String ln, <span class="hljs-keyword">int</span> a)</span></span>{
+        <span class="hljs-keyword">this</span>.firstName = fn; <span class="hljs-keyword">this</span>.lastName = ln; <span class="hljs-keyword">this</span>.age = a;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getFirstName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> firstName; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getLastName</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> lastName; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getAge</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> age; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Person <span class="hljs-title">getSpouse</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> spouse; }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> Object <span class="hljs-title">writeReplace</span><span class="hljs-params">()</span>
+        <span class="hljs-keyword">throws</span> java.io.ObjectStreamException</span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> PersonProxy(<span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setFirstName</span><span class="hljs-params">(String value)</span> </span>{ firstName = value; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setLastName</span><span class="hljs-params">(String value)</span> </span>{ lastName = value; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{ age = value; }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSpouse</span><span class="hljs-params">(Person value)</span> </span>{ spouse = value; }   
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;[Person: firstName=&quot;</span> + firstName +
+            <span class="hljs-string">&quot; lastName=&quot;</span> + lastName +
+            <span class="hljs-string">&quot; age=&quot;</span> + age +
+            <span class="hljs-string">&quot; spouse=&quot;</span> + spouse.getFirstName() +
+            <span class="hljs-string">&quot;]&quot;</span>;
+    }    
+
+    <span class="hljs-keyword">private</span> String firstName;
+    <span class="hljs-keyword">private</span> String lastName;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+    <span class="hljs-keyword">private</span> Person spouse;
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;, <code>PersonProxy</code> &#x5FC5;&#x987B;&#x8DDF;&#x8E2A; <code>Person</code> &#x7684;&#x6240;&#x6709;&#x6570;&#x636E;. &#x8FD9;&#x901A;&#x5E38;&#x610F;&#x5473;&#x7740;&#x4EE3;&#x7406;&#x9700;&#x8981;&#x662F; <code>Person</code> &#x7684;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x7C7B;, &#x4EE5;&#x4FBF;&#x80FD;&#x8BBF;&#x95EE; private &#x5B57;&#x6BB5;. &#x6709;&#x65F6;&#x5019;, &#x4EE3;&#x7406;&#x8FD8;&#x9700;&#x8981;&#x8FFD;&#x8E2A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x5F15;&#x7528;&#x5E76;&#x624B;&#x52A8;&#x5E8F;&#x5217;&#x5316;&#x5B83;&#x4EEC;, &#x4F8B;&#x5982; <code>Person</code> &#x7684; spouse.</p>
+<p>&#x8FD9;&#x79CD;&#x6280;&#x5DE7;&#x662F;&#x5C11;&#x6570;&#x51E0;&#x79CD;&#x4E0D;&#x9700;&#x8981;&#x8BFB;/&#x5199;&#x5E73;&#x8861;&#x7684;&#x6280;&#x5DE7;&#x4E4B;&#x4E00;. &#x4F8B;&#x5982;, &#x4E00;&#x4E2A;&#x7C7B;&#x88AB;&#x91CD;&#x6784;&#x6210;&#x53E6;&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x540E;&#x7684;&#x7248;&#x672C;&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A; <code>readResolve</code> &#x65B9;&#x6CD5;, &#x4EE5;&#x4FBF;&#x9759;&#x9ED8;&#x5730;&#x5C06;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x6210;&#x65B0;&#x7C7B;&#x578B;. &#x7C7B;&#x4F3C;&#x5730;, &#x5B83;&#x53EF;&#x4EE5;&#x91C7;&#x7528; <code>writeReplace</code> &#x65B9;&#x6CD5;&#x5C06;&#x65E7;&#x7C7B;&#x5E8F;&#x5217;&#x5316;&#x6210;&#x65B0;&#x7248;&#x672C;.</p>
+<h1 id="&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;"><a name="&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;" class="anchor-navigation-ex-anchor" href="#&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;" class="plugin-anchor" href="#&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4FE1;&#x4EFB;&#x4F46;&#x8981;&#x9A8C;&#x8BC1;</h1>
+<p>&#x8BA4;&#x4E3A;&#x5E8F;&#x5217;&#x5316;&#x6D41;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x603B;&#x662F;&#x4E0E;&#x6700;&#x521D;&#x5199;&#x5230;&#x6D41;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;, &#x8FD9;&#x6CA1;&#x6709;&#x95EE;&#x9898;. &#x4F46;&#x662F;, &#x6B63;&#x5982;&#x4E00;&#x4F4D;&#x7F8E;&#x56FD;&#x524D;&#x603B;&#x7EDF;&#x6240;&#x8BF4;&#x7684;, &#x201C;&#x4FE1;&#x4EFB;, &#x4F46;&#x8981;&#x9A8C;&#x8BC1;&#x201D;.</p>
+<p>&#x5BF9;&#x4E8E;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5BF9;&#x8C61;, &#x8FD9;&#x610F;&#x5473;&#x7740;&#x9A8C;&#x8BC1;&#x5B57;&#x6BB5;, &#x4EE5;&#x786E;&#x4FDD;&#x5728;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x5B83;&#x4EEC;&#x4ECD;&#x5177;&#x6709;&#x6B63;&#x786E;&#x7684;&#x503C;, &#x201C;&#x4EE5;&#x9632;&#x4E07;&#x4E00;&#x201D;. &#x4E3A;&#x6B64;, &#x53EF;&#x4EE5;&#x5B9E;&#x73B0; <code>ObjectInputValidation</code>&#x63A5;&#x53E3;, &#x5E76;&#x8986;&#x76D6; <code>validateObject()</code> &#x65B9;&#x6CD5;. &#x5982;&#x679C;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x65F6;&#x53D1;&#x73B0;&#x67D0;&#x5904;&#x6709;&#x9519;&#x8BEF;, &#x5219;&#x629B;&#x51FA;&#x4E00;&#x4E2A; <code>InvalidObjectException</code>.</p>
+<h1 id="&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;"><a name="&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;" class="anchor-navigation-ex-anchor" href="#&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;" class="plugin-anchor" href="#&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x58F0;&#x660E;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E0D;&#x5E8F;&#x5217;&#x5316;</h1>
+<p>&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;Java&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x975E;&#x9759;&#x6001;&#x548C;&#x975E;&#x77AC;&#x65F6;&#x57DF;&#x90FD;&#x4F1A;&#x88AB;&#x5305;&#x62EC;&#x8FDB;&#x6765;&#xFF0C;&#x800C;&#x4E0E;&#x57DF;&#x7684;&#x53EF;&#x89C1;&#x6027;&#x58F0;&#x660E;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#x3002;&#x8FD9;&#x53EF;&#x80FD;&#x4F1A;&#x5BFC;&#x81F4;&#x67D0;&#x4E9B;&#x4E0D;&#x5E94;&#x8BE5;&#x51FA;&#x73B0;&#x7684;&#x57DF;&#x88AB;&#x5305;&#x542B;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x7684;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x5BC6;&#x7801;&#x7B49;&#x9690;&#x79C1;&#x4FE1;&#x606F;&#x3002;&#x7531;&#x4E8E;Java&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x4E4B;&#x540E;&#x7684;&#x683C;&#x5F0F;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#xFF0C;&#x5176;&#x5B83;&#x4EBA;&#x53EF;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7684;&#x4ECE;&#x4E2D;&#x5206;&#x6790;&#x51FA;&#x5176;&#x4E2D;&#x7684;&#x5404;&#x79CD;&#x4FE1;&#x606F;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x79CD;&#x89E3;&#x51B3;&#x529E;&#x6CD5;&#x662F;&#x628A;&#x57DF;&#x58F0;&#x660E;&#x4E3A;&#x77AC;&#x65F6;&#x7684;&#xFF0C;&#x5373;&#x4F7F;&#x7528;transient&#x5173;&#x952E;&#x8BCD;&#x3002;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x505A;&#x6CD5;&#x662F;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;serialPersistentFields?</p>
+<p>&#x57DF;&#x6765;&#x58F0;&#x660E;&#x5E8F;&#x5217;&#x5316;&#x65F6;&#x8981;&#x5305;&#x542B;&#x7684;&#x57DF;&#x3002;&#x4ECE;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5728;Java&#x5E8F;&#x5217;&#x5316;&#x673A;&#x5236;&#x4E2D;&#x7684;&#x8FD9;&#x79CD;&#x4EC5;&#x5728;&#x4E66;&#x9762;&#x5C42;&#x6B21;&#x4E0A;&#x5B9A;&#x4E49;&#x7684;&#x5951;&#x7EA6;&#x3002;&#x58F0;&#x660E;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x57DF;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x56FA;&#x5B9A;&#x7684;&#x540D;&#x79F0;&#x548C;&#x7C7B;&#x578B;&#x3002;&#x5728;&#x540E;&#x9762;&#x8FD8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5176;&#x5B83;&#x7C7B;&#x4F3C;&#x8FD9;&#x6837;&#x7684;&#x5951;&#x7EA6;&#x3002;&#x867D;&#x7136;Serializable&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x8BB0;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x5B83;&#x5176;&#x5B9E;&#x662F;&#x5305;&#x542B;&#x6709;&#x4E0D;&#x5C11;&#x9690;&#x542B;&#x7684;&#x8981;&#x6C42;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x7ED9;&#x51FA;&#x4E86;
+ serialPersistentFields&#x7684;&#x58F0;&#x660E;&#x793A;&#x4F8B;&#xFF0C;&#x5373;&#x53EA;&#x6709;firstName&#x8FD9;&#x4E2A;&#x57DF;&#x662F;&#x8981;&#x88AB;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> ObjectStreamField[] serialPersistentFields = {
+    <span class="hljs-keyword">new</span> ObjectStreamField(<span class="hljs-string">&quot;firstName&quot;</span>, String.class)
+};
+</code></pre>
+<h1 id="&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable"><a name="&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable" class="plugin-anchor" href="#&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;externalizable"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9A;&#x5236;&#x5316;&#x5E8F;&#x5217;&#x5316;Externalizable</h1>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x64CD;&#x4F5C;
+ * */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExternalizableDemo</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception</span>{
+        ser(); <span class="hljs-comment">// &#x5E8F;&#x5217;&#x5316;</span>
+        dser(); <span class="hljs-comment">// &#x53CD;&#x5E8F;&#x5217;&#x8BDD;</span>
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">ser</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception</span>{
+        File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;d:&quot;</span> + File.separator + <span class="hljs-string">&quot;hello.txt&quot;</span>);
+        ObjectOutputStream out = <span class="hljs-keyword">new</span> ObjectOutputStream(<span class="hljs-keyword">new</span> FileOutputStream(
+                file));
+        out.writeObject(<span class="hljs-keyword">new</span> Person(<span class="hljs-string">&quot;rollen&quot;</span>, <span class="hljs-number">20</span>));
+        out.close();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dser</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception</span>{
+        File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;d:&quot;</span> + File.separator + <span class="hljs-string">&quot;hello.txt&quot;</span>);
+        ObjectInputStream input = <span class="hljs-keyword">new</span> ObjectInputStream(<span class="hljs-keyword">new</span> FileInputStream(
+                file));
+        Object obj = input.readObject();
+        input.close();
+        System.out.println(obj);
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Externalizable</span></span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span></span>{
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, <span class="hljs-keyword">int</span> age)</span></span>{
+        <span class="hljs-keyword">this</span>.name = name;
+        <span class="hljs-keyword">this</span>.age = age;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x59D3;&#x540D;&#xFF1A;&quot;</span> + name + <span class="hljs-string">&quot;  &#x5E74;&#x9F84;&#xFF1A;&quot;</span> + age;
+    }
+
+    <span class="hljs-comment">// &#x590D;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;, &#x6839;&#x636E;&#x9700;&#x8981;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x5177;&#x4F53;&#x5185;&#x5BB9;, &#x5728;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeExternal</span><span class="hljs-params">(ObjectOutput out)</span> <span class="hljs-keyword">throws</span> IOException</span>{
+        out.writeObject(<span class="hljs-keyword">this</span>.name);
+        out.writeInt(age);
+    }
+
+    <span class="hljs-comment">// &#x590D;&#x5199;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;, &#x6839;&#x636E;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x5185;&#x5BB9; &#x53CD;&#x5E8F;&#x5217;&#x8BDD;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">readExternal</span><span class="hljs-params">(ObjectInput in)</span> <span class="hljs-keyword">throws</span> IOException,
+            ClassNotFoundException</span>{
+        <span class="hljs-keyword">this</span>.name = (String) in.readObject();
+        <span class="hljs-keyword">this</span>.age = in.readInt();
+    }
+
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> age;
+}
+</code></pre>
+<h1 id="&#x7591;&#x95EE;"><a name="&#x7591;&#x95EE;" class="anchor-navigation-ex-anchor" href="#&#x7591;&#x95EE;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7591;&#x95EE;" class="plugin-anchor" href="#&#x7591;&#x95EE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7591;&#x95EE;:</h1>
+<ol>
+<li>&#x8F6C;&#x6362;&#x6210;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x662F;&#x4EC0;&#x4E48;&#x6837;&#x5B50;&#xFF1F;</li>
+<li>Enum&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x662F;&#x5426;&#x80FD;&#x6B63;&#x786E;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#xFF1F;</li>
+</ol>
+<h1 id="&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;"><a name="&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;" class="plugin-anchor" href="#&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x4ED6;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;</h1>
+<h2 id="kryo"><a name="kryo" class="anchor-navigation-ex-anchor" href="#kryo"><i class="fa fa-link" aria-hidden="true"></i></a><a name="kryo" class="plugin-anchor" href="#kryo"><i class="fa fa-link" aria-hidden="true"></i></a>kryo</h2>
+<hr>
+<p>[&#x53C2;&#x8003;&#x6587;&#x732E;]:</p>
+<ol>
+<li>Think in Java</li>
+<li><a href="http://www.ibm.com/developerworks/cn/java/j-5things1/" target="_blank">&#x5173;&#x4E8E; Java &#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x60A8;&#x4E0D;&#x77E5;&#x9053;&#x7684; 5 &#x4EF6;&#x4E8B;</a></li>
+<li><a href="http://www.infoq.com/cn/articles/cf-java-object-serialization-rmi/" target="_blank">Java&#x6DF1;&#x5EA6;&#x5386;&#x9669;&#xFF08;&#x5341;&#xFF09;&#x2014;&#x2014;Java&#x5BF9;&#x8C61;&#x5E8F;&#x5217;&#x5316;&#x4E0E;RMI</a></li>
+</ol>
+<blockquote id="fn_JVM&#x7ED3;&#x6784;">
+<sup>JVM&#x7ED3;&#x6784;</sup>. /Java/JVM/<a href="#reffn_JVM&#x7ED3;&#x6784;" title="Jump back to footnote [JVM&#x7ED3;&#x6784;] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="java-XML-JSON.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Java XML与JSON">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java序列化","layout":"post","date":"2016-08-27T11:28:00.000Z","category":"Java","tags":["Java","IO","InputStream","OutputStream","Reader","Writer"],"share":true,"comments":true,"level":"2.2.1.4","depth":3,"next":{"title":"IO与网络","level":"2.2.2","depth":2,"ref":"","articles":[{"title":"IO模式","level":"2.2.2.1","depth":3,"path":"Java/io/IO-Model.md","ref":"Java/io/IO-Model.md","articles":[]},{"title":"Java NIO","level":"2.2.2.2","depth":3,"path":"Java/io/NIO.md","ref":"Java/io/NIO.md","articles":[]},{"title":"这可能是目前最透彻的Netty原理架构解析","level":"2.2.2.3","depth":3,"path":"JavaWeb/Netty/Netty-theory.md","ref":"JavaWeb/Netty/Netty-theory.md","articles":[]},{"title":"高性能网络编程","level":"2.2.2.4","depth":3,"path":"Java/io/high-performance-network-programming.md","ref":"Java/io/high-performance-network-programming.md","articles":[]}]},"previous":{"title":"Java XML与JSON","level":"2.2.1.3","depth":3,"path":"Java/io/java-XML-JSON.md","ref":"Java/io/java-XML-JSON.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","expandable-chapters","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{},"pluginsConfig":{"github":{"url":"https://github.com/zhangzuofeng"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"https://blankj.com/gitbook/source/images/donate.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon-32x32.webp","bookmark":"./source/images/favicon-32x32.webp","appleTouch":"./source/images/apple-touch-icon.webp"},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"averyzhang","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"guadazi-wiki","language":"zh-hans","links":{"sidebar":{"呱嗒子wiki":"http://wiki.zhangzuofeng.cn"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"Java/io/object-serialization.md","mtime":"2020-05-10T09:17:15.397Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-10T10:52:38.470Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
